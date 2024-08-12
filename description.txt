@@ -1,0 +1,14 @@
+This mod adds a post-Cultist upgrade to The Axe.
+
+New Item: The Free Bird Shredder
+- It plays the backing track of the solo part of Free Bird by Lynyrd Skynyrd when held
+- The guitar solo plays over the backing track if you are using it
+- It significantly increases your movement speed when held
+- Right click (or whatever your 'Interact' keybind is) to switch between a ranged weapon mode and a hamaxe mode!
+- Craft it with The Axe, 5 of any Lunar Fragment, Illegal Gun Parts, and 5 of any Bird critter (Birds, Blue Jays, Cardinals)
+- (It also resembles the Gibson Explorer, which was used when Lynyrd Skynyrd recorded the studio version on Free Bird)
+
+Make sure your music is turned up, since the weapon will play sounds that are linked to the music volume slider.
+This mod should be multiplayer compatible! Other players will not hear the music that's playing on your end.
+
+Note: This mod pre-loads large sound files (the backing and guitar solo tracks) upon entering the world. You may experience a small one-time lag spike at that time.

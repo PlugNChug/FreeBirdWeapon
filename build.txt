@@ -1,0 +1,4 @@
+displayName = The Free Bird Shredder
+author = PlugNChug
+version = 1.0
+hideCode = true

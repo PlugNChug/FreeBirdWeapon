@@ -1,0 +1,43 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	FreeBirdGuitar: {
+		DisplayName: The Free Bird Shredder
+		Tooltip:
+			'''
+			Automatically plays the backing track to the second half of [c/FFFF00:Free Bird] by [c/FFFF00:Lynyrd Skynyrd].
+			Using this will play the solo synchronized to the backing track.
+			Your horizontal speed will be significantly increased when holding this.
+			<MODE>
+			<right> <MODE2>
+			'Something about going 40 over the speed limit'
+			'''
+		Mode1Part1: "[c/FFBBBB:Blasts homing music notes with velocities that depend on your movement speed.]"
+		Mode1Part2: to switch to hamaxe mode!
+		Mode2Part1: "[c/FFBBBB:Demolishes trees and walls with ease.]"
+		Mode2Part2: to switch to ranged weapon mode!
+	}
+}
+
+Projectiles: {
+	FreeBirdHamaxeSwing.DisplayName: The Free Bird Shredder
+	FreeBirdNote1.DisplayName: Free Bird Solo
+	FreeBirdNote2.DisplayName: Free Bird Solo
+	FreeBirdNote3.DisplayName: Free Bird Solo
+}
+
+Configs: {
+	MusicConfig: {
+		DisplayName: Music Config
+		Headers.MusicToggle: Music Settings
+
+		MidiSong: {
+			Label: Use MIDI Cover
+			Tooltip:
+				'''
+				Useful if you want to prevent potential content demonitization.
+				The MIDI used was posted by Estouls Midi Studio and extracted from a karaoke player by the4kman.
+				'''
+		}
+	}
+}

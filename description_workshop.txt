@@ -1,0 +1,26 @@
+[h1]The Free Bird Shredder[/h1]
+[h2]Version: {ModVersion}[/h2]
+
+Source code https://github.com/tModLoader/tModLoader/tree/1.4.4/ExampleMod
+
+Item added: The Free Bird Shredder
+[list]
+  [*] It plays the backing track of the solo part of [i]Free Bird[/i] by Lynyrd Skynyrd when held
+  [*] The guitar solo overlays the backing track if you are using the weapon
+  [*] It significantly increases your movement speed when held
+  [*] Right click (or whatever your 'Interact' keybind is) to switch between a ranged weapon mode and a hamaxe mode!
+  [*] Craft it with The Axe, 5 of any Lunar Fragment, Illegal Gun Parts, and 5 of any Bird critter (Birds, Blue Jays, Cardinals)
+  [*] [i](It also resembles the Gibson Explorer, which was used when Lynyrd Skynyrd recorded the studio version on Free Bird)[/i]
+[/list]
+
+Make sure your music is turned up, since the weapon will play sounds that are linked to the music volume slider.
+This mod should be multiplayer compatible! Other players will not hear the music that's playing on your end.
+
+Note: This mod pre-loads large sound files (the backing and guitar solo tracks) upon entering the world. You may experience a small one-time lag spike at that time.
+
+[h2]For Streamers/Creators[/h2]
+This mod includes a configuration option to use a MIDI version of Free Bird instead of the real version. [i]Disabled by default.[/i]
+
+[h2]COPYRIGHT DISCLAIMER[/h2]
+The album cover for Lynyrd Skynyrd's debut album [i](Pronounced 'Lĕh-'nérd 'Skin-'nérd)[/i], along with one of its tracks, [i]Free Bird[/i], are used in this mod.
+These are copyright (C) Lynyrd Skynyrd, all rights reserved. This work is non-commercial and makes zero financial gain.
