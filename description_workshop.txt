@@ -1,7 +1,7 @@
 [h1]The Free Bird Shredder[/h1]
 [h2]Version: {ModVersion}[/h2]
 
-Source code https://github.com/PlugNChug/FreeBirdWeapon
+Source code: {ModHomepage}
 
 Item added: The Free Bird Shredder
 [list]
@@ -9,7 +9,10 @@ Item added: The Free Bird Shredder
   [*] The guitar solo overlays the backing track if you are using the weapon
   [*] It significantly increases your movement speed when held
   [*] Right click (or whatever your 'Interact' keybind is) to switch between a ranged weapon mode and a hamaxe mode!
+  [*] In ranged weapon mode, it counts as a specialist ranged weapon for Shroomite Armor.
+  [*] It cannot be reforged.
   [*] Craft it with The Axe, 5 of any Lunar Fragment, Illegal Gun Parts, and 5 of any Bird critter (Birds, Blue Jays, Cardinals)
+  [*] The music, which lasts over 4 minutes each cycle, loops back into itself relatively seamlessly.
   [*] [i](It also resembles the Gibson Explorer, which was used when Lynyrd Skynyrd recorded the studio version on Free Bird)[/i]
 [/list]
 
@@ -18,9 +21,18 @@ This mod should be multiplayer compatible! Other players will not hear the music
 
 Note: This mod pre-loads large sound files (the backing and guitar solo tracks) upon entering the world. You may experience a small one-time lag spike at that time.
 
+[h2]Customize Your Free Bird Experience[/h2]
+Server-sided configuration options now included!
+[list]
+  [*] Early craft recipe mode: Alternate recipe that allows the weapon to be crafted in a fresh world
+  [*] Damage scaling mode: Damage will start low but scales based on how many bosses are defeated. Works well with early craft recipe mode enabled
+  [*] Custom damage mode: Allows you to set a custom damage value to the weapon
+[/list]
+
 [h2]For Streamers/Creators[/h2]
 This mod includes a configuration option to use a MIDI version of Free Bird instead of the real version. [i]Disabled by default.[/i]
 
 [h2]COPYRIGHT DISCLAIMER[/h2]
-The album cover for Lynyrd Skynyrd's debut album [i](Pronounced 'Lĕh-'nérd 'Skin-'nérd)[/i], along with one of its tracks, [i]Free Bird[/i], are used in this mod.
-These are copyright (C) Lynyrd Skynyrd, all rights reserved. This work is non-commercial and makes zero financial gain.
+The album cover for Lynyrd Skynyrd's debut album [i](Pronounced 'Lĕh-'nérd 'Skin-'nérd)[/i], along with one of its tracks, [i]Free Bird[/i] (or, [i]Freebird[/i]), are used in this mod.
+These are copyright (C) Lynyrd Skynyrd, all rights reserved. This work is non-commercial and makes zero financial gain.[quote=tModLoader FreeBirdWeapon]
+Developed By PlugNChug[/quote]

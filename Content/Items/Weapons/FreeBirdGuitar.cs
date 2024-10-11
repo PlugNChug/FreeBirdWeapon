@@ -1,5 +1,7 @@
+using FreeBirdWeapon.Common.Config;
 using FreeBirdWeapon.Common.Player;
 using FreeBirdWeapon.Content.Projectiles;
+using log4net.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -56,7 +58,7 @@ namespace FreeBirdWeapon.Content.Items.Weapons
 
         public override void SetDefaults()
         {
-            Item.damage = 80;
+            // We call GetDamage() when it's in the player's inventory so it updates constantly.
             Item.DamageType = DamageClass.Ranged;
             Item.noMelee = true;
             Item.width = 70;
@@ -75,6 +77,57 @@ namespace FreeBirdWeapon.Content.Items.Weapons
             Item.autoReuse = true;
             tooltipModePart1 = Language.GetTextValue("Mods.FreeBirdWeapon.Items.FreeBirdGuitar.Mode1Part1");
             tooltipModePart2 = Language.GetTextValue("Mods.FreeBirdWeapon.Items.FreeBirdGuitar.Mode1Part2");
+        }
+
+        public void GetDamage()
+        {
+            if (GetInstance<GameConfig>().CustomDamage)
+            {
+                Item.damage = int.Parse(GetInstance<GameConfig>().CustomDamageAmount);
+            }
+            else if (GetInstance<GameConfig>().ScalingDamage)
+            {
+                Item.damage = 12;
+                if (NPC.downedSlimeKing)
+                    Item.damage += 3;
+                if (NPC.downedBoss1)
+                    Item.damage += 3;
+                if (NPC.downedBoss2)
+                    Item.damage += 3;
+                if (NPC.downedBoss3)
+                    Item.damage += 3;
+                if (NPC.downedQueenBee || NPC.downedDeerclops)
+                    Item.damage += 4;
+                if (Main.hardMode)
+                    Item.damage += 12; // 40 damage by this point if all prior bosses defeated
+                if (NPC.downedQueenSlime)
+                    Item.damage += 5;
+                if (NPC.downedFishron || NPC.downedEmpressOfLight)  // If-else block accounts for the case where the player wants to skip straight to Fishron in the run
+                    Item.damage += 25;  // 75 damage assuming Queen Slime defeated
+                else
+                {
+                    if (NPC.downedMechBoss1)
+                        Item.damage += 3;   // 48 damage assuming Queen Slime defeated
+                    if (NPC.downedMechBoss1)
+                        Item.damage += 3;   // 51 damage
+                    if (NPC.downedMechBoss3)
+                        Item.damage += 3;   // 54 damage
+                    if (NPC.downedPlantBoss)
+                        Item.damage += 6;   // 60 damage
+                    if (NPC.downedGolemBoss)
+                        Item.damage += 10;   // 70 damage
+                }
+                if (NPC.downedAncientCultist)
+                    Item.damage += 10;  // 80 damage by this point if all prior bosses defeated. By this point, this should match the non-damage scaling version of the weapon since it would be around this point that one would get it
+                if (NPC.downedMoonlord && Main.hardMode)
+                    Item.damage += 70;  // 150 damage, basically makes this an OP endgame weapon
+                
+
+            }
+            else
+            {
+                Item.damage = 80;
+            }
         }
 
         public override void SaveData(TagCompound tag)
@@ -368,15 +421,30 @@ namespace FreeBirdWeapon.Content.Items.Weapons
             }
         }
 
+        public override void UpdateInventory(Player player)
+        {
+            GetDamage();
+        }
+
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.TheAxe);
-            recipe.AddRecipeGroup(RecipeGroupID.Fragment, 5);
-            recipe.AddIngredient(ItemID.IllegalGunParts);
-            recipe.AddRecipeGroup(RecipeGroupID.Birds, 5);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.Register();
+            if (GetInstance<GameConfig>().EasyCraft)
+            {
+                Recipe recipe = CreateRecipe();
+                recipe.AddRecipeGroup(RecipeGroupID.Wood, 20);
+                recipe.AddRecipeGroup("CopperBar", 2);
+                recipe.AddTile(TileID.Anvils);
+                recipe.Register();
+            } else
+            {
+                Recipe recipe = CreateRecipe();
+                recipe.AddIngredient(ItemID.TheAxe);
+                recipe.AddRecipeGroup(RecipeGroupID.Fragment, 5);
+                recipe.AddIngredient(ItemID.IllegalGunParts);
+                recipe.AddRecipeGroup(RecipeGroupID.Birds, 5);
+                recipe.AddTile(TileID.MythrilAnvil);
+                recipe.Register();
+            }
         }
     }
 }

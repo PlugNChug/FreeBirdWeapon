@@ -11,4 +11,10 @@ New Item: The Free Bird Shredder
 Make sure your music is turned up, since the weapon will play sounds that are linked to the music volume slider.
 This mod should be multiplayer compatible! Other players will not hear the music that's playing on your end.
 
+Configuration options:
+- Streamer mode plays a MIDI cover of the solo (Client-side)
+- Early craft recipe mode: Alternate recipe that allows the weapon to be crafted in a fresh world (Server-side)
+- Damage scaling mode: Damage will start low but scales based on how many bosses are defeated. Works well with early craft recipe mode enabled (Server-side)
+- Custom damage mode: Allows you to set a custom damage value to the weapon (Server-side)
+
 Note: This mod pre-loads large sound files (the backing and guitar solo tracks) upon entering the world. You may experience a small one-time lag spike at that time.

@@ -40,4 +40,51 @@ Configs: {
 				'''
 		}
 	}
+
+	GameConfig: {
+		DisplayName: Game Config
+
+		Headers: {
+			GameConfig: Game Config
+			CustomDamage: Custom Damage Header
+		}
+
+		EasyCraft: {
+			Label: Early Craft Recipe
+			Tooltip:
+				'''
+				When enabled, allows you to craft the weapon with 20 of any Wood and 2 Copper/Tin Bars at any Anvil.
+				(Works well with the damage scaling option enabled!)
+				'''
+		}
+
+		ScalingDamage: {
+			Label: Damage Scaling Mode
+			Tooltip:
+				'''
+				When enabled, forces the weapon to start at 12 damage, but scales damage
+				based on which bosses you have defeated. Events and event bosses are not factored in.
+				[c/FFBBBB:Overridden by custom damage if that is enabled.]
+				'''
+		}
+
+		CustomDamage: {
+			Label: Custom Damage
+			Tooltip:
+				'''
+				When enabled, allows you to customize the damage of the Free Bird Shredder.
+				[c/FFBBBB:Overrides the damage scaling option if this is enabled.]
+				'''
+		}
+
+		CustomDamageAmount: {
+			Label: Custom Damage Amount
+			Tooltip:
+				'''
+				What do you want the damage of the Shredder to be?
+				Setting this to 0 will make it a novelty item.
+				[c/FFBBBB:Has no effect if custom damage is disabled.]
+				'''
+		}
+	}
 }
