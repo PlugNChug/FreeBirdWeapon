@@ -1,5 +1,5 @@
 using FreeBirdWeapon.Common.Config;
-using FreeBirdWeapon.Common.Player;
+using FreeBirdWeapon.Common.Players;
 using FreeBirdWeapon.Content.Projectiles;
 using log4net.Core;
 using Microsoft.Xna.Framework;
