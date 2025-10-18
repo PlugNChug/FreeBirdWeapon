@@ -1,5 +1,5 @@
 displayName = The Free Bird Shredder
 author = PlugNChug
 homepage = https://github.com/PlugNChug/FreeBirdWeapon
-version = 1.2
+version = 1.2.1
 hideCode = true

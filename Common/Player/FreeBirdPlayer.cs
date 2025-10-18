@@ -134,12 +134,6 @@ namespace FreeBirdWeapon.Common.Players
             if (Main.netMode == NetmodeID.Server)
                 return;
             
-            // Debug: Check if this is even running for the local player
-            if (Player.whoAmI == Main.myPlayer && Main.GameUpdateCount % 120 == 0)
-            {
-                Main.NewText($"[DEBUG] PostUpdate running for local player {Main.myPlayer}", Color.Orange);
-            }
-            
             // Handle local player's own music
             if (Player.whoAmI == Main.myPlayer)
             {
@@ -166,10 +160,6 @@ namespace FreeBirdWeapon.Common.Players
                 {
                     broadcastingPlayer = Player.whoAmI;
                     musicStartTime = Main.GameUpdateCount;
-                    
-                    // Debug message
-                    if (Main.netMode != NetmodeID.SinglePlayer)
-                        Main.NewText($"{Player.name} is now broadcasting!", Color.Yellow);
                 }
                 
                 // Sync music state to other players
@@ -358,12 +348,6 @@ namespace FreeBirdWeapon.Common.Players
             // Calculate distance from local player to remote broadcasting player
             float distance = Vector2.Distance(Main.LocalPlayer.Center, remotePlayer.Center);
             
-            // Debug message when starting to play remote music
-            if (!localFBPlayer.remoteMusicPlaying && Main.GameUpdateCount % 60 == 0)
-            {
-                Main.NewText($"Starting remote music from {remotePlayer.name}, distance: {distance / 16f:F1} tiles", Color.Yellow);
-            }
-            
             // Only play if within hearing range
             if (distance > MAX_HEARING_DISTANCE)
             {
@@ -397,8 +381,6 @@ namespace FreeBirdWeapon.Common.Players
                 localFBPlayer.remoteSoloSlot = SoundEngine.PlaySound(solo, remotePlayer.position);
                 localFBPlayer.remoteMusicPlaying = true;
                 localFBPlayer.remoteMusicJustStarted = true; // Flag for fade-in
-                
-                Main.NewText($"Remote music started!", Color.Lime);
                 
                 // Start at 0 volume for fade-in effect
                 if (SoundEngine.TryGetActiveSound(localFBPlayer.remoteBackingTrackSlot, out remoteBackingTrack))
